@@ -45,11 +45,11 @@ df_features = df_features.reset_index(drop=True)
 print(df_features.head(10))
 print(df_features.tail(2))
 
-df_features["label"] = df_features["label"].map({"real": 0, "fake": 1, "humor": 2})
+df_features["label"] = df_features["label"].map({"real": 0, "fake": 1, "humor": 0})
 
 mask_on_1 = df_features['label'] == 1
 mask_on_0 = df_features['label'] == 0
-mask_on_2 = df_features['label'] == 2
+mask_on_2 = df_features['label'] == 0
 
 print(df_features.sample(10))
 df_tweetText_1 = df_features[mask_on_1]['tweetText']
@@ -127,6 +127,9 @@ gs.fit(X_train, y_train)
 
 
 #cross validation todo
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(gs, X, y, cv=10)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
 #other models apply todo
 
 print("Best score:", gs.best_score_)
