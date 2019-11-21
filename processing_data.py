@@ -129,6 +129,7 @@ gs.fit(X_train, y_train)
 #cross validation todo
 from sklearn.model_selection import cross_val_score
 scores = cross_val_score(gs, X, y, cv=10)
+print('calculating...')
 print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
 #other models apply todo
 
