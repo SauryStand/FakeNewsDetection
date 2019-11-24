@@ -24,11 +24,13 @@ def generateRawCSV(filename):
 
     print(df.head())
 
-    df.to_csv('dataset/raw_training.csv')
+    #df.to_csv('dataset/raw_training.csv')
+    df.to_csv('dataset/raw_test.csv')
 
 #source.close()
 #target.close()
 
 if __name__ == '__main__':
     filename = 'dataset/mediaeval-2015-trainingset.txt'
-    generateRawCSV(filename)
+    filename2 = 'dataset/mediaeval-2015-testset.txt'
+    generateRawCSV(filename2)

@@ -124,9 +124,9 @@ pipe_params = {'cvec__stop_words': [None, 'english', custom],
 
 gs = GridSearchCV(pipe, param_grid=pipe_params, cv=3)
 gs.fit(X_train, y_train)
+gs.predict()
 
-
-#cross validation todo
+#cross validation
 from sklearn.model_selection import cross_val_score
 scores = cross_val_score(gs, X, y, cv=10)
 print('calculating...')
