@@ -59,7 +59,7 @@ df_tweetText_2 = df_features[mask_on_2]['tweetText']
 #print(df_tweetText)
 # # Instantiate a CountVectorizer
 # # data cleaning
-cv1 = CountVectorizer(stop_words = 'english')
+cv1 = CountVectorizer(stop_words = 'english', ngram_range=(2,2))
 cv0 = CountVectorizer(stop_words = 'english')
 cv2 = CountVectorizer(stop_words = 'english')
 df_tweetText_cvec_1 = cv1.fit_transform(df_tweetText_1)
